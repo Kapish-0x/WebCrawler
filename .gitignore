@@ -17,6 +17,8 @@ backend/crawler-worker/.pytest_cache/
 **/.env.*.local
 **/local.properties
 
+.env 
+
 Thumbs.db
 ehthumbs.db
 Desktop.ini
