@@ -4,10 +4,13 @@ import cookieParser from "cookie-parser";
 import { connect } from "mongoose";
 import cors from 'cors';
 import { Client } from '@elastic/elasticsearch'; 
+import { commonApp } from "./routes/commonAPI.js";
 
 config();
 
 const app = exp();
+
+app.use("/api", commonApp);
 
 app.use(cors()); 
 app.use(cookieParser());
