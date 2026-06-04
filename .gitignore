@@ -12,12 +12,10 @@ backend/crawler-worker/*.py[cod]
 backend/crawler-worker/*$py.class
 backend/crawler-worker/.pytest_cache/
 
-**/.env
-**/.env.local
-**/.env.*.local
-**/local.properties
-
-.env 
+# Environment
+.env
+.env.local
+.env.*.local
 
 Thumbs.db
 ehthumbs.db
