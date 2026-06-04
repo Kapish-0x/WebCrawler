@@ -12,7 +12,7 @@ services:
 
   # Kafka Message Broker
   kafka:
-    image: confluentinc/cp-kafka:latest
+    image: confluentinc/cp-kafka:7.5.0
     depends_on:
       - zookeeper
     ports:
