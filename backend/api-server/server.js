@@ -7,7 +7,8 @@ import { Client } from '@elastic/elasticsearch';
 import { commonApp } from "./routes/commonAPI.js";
 import { startCrawlConsumer } from "./consumers/crawlConsumer.js";
 import { initProducer } from "./config/kafkaProducer.js";
-
+import searchRouter from "./routes/search.js";
+import jobsRouter from "./routes/jobs.js";
 config();
 
 const app = exp();
@@ -19,6 +20,8 @@ app.use(exp.json()); // Parses JSON payloads so req.body works
 
 // 2. MOUNT ROUTES SECOND
 app.use("/api", commonApp);
+app.use("/api" , searchRouter);
+app.use('/api', jobsRouter);
 
 export const esClient = new Client({ node: process.env.ELASTICSEARCH_NODE || 'http://localhost:9200' });
 
